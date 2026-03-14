@@ -1,0 +1,410 @@
+<!-- <!-- <!DOCTYPE html>
+<html>
+
+<head>
+
+<title>For My Papa</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>For My Papa ❤️</h1>
+
+<img src="images/photo1.jpeg" class="main-photo">
+
+<p class="message">
+
+Dear Papa,
+
+Thank you for always supporting me and guiding me in life.
+
+Everything I am today is because of you.
+
+I may not say it often, but I am truly grateful for everything you do.
+
+You are my hero.
+
+Love you Papa.
+
+</p>
+
+
+<h2>Our Memories</h2>
+
+<div class="gallery">
+
+<img src="images/photo2.jpeg">
+<img src="images/photo3.jpeg">
+<img src="images/Photo5.jpeg">
+
+</div>
+
+
+<button onclick="celebrate()">Click to Celebrate 🎉</button>
+
+<footer>
+
+<p>Made with love by Ritesh</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Papa 🎉</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(45deg,#ff6b6b,#ffd93d,#6bcBef);
+font-family:Arial;
+text-align:center;
+color:white;
+overflow-x:hidden;
+}
+
+/* start screen */
+
+.start{
+font-size:26px;
+cursor:pointer;
+padding:20px;
+}
+
+/* card */
+
+.card{
+display:none;
+background:rgba(0,0,0,0.5);
+padding:25px;
+border-radius:20px;
+max-width:360px;
+animation:pop 1s ease;
+}
+
+@keyframes pop{
+from{transform:scale(0)}
+to{transform:scale(1)}
+}
+
+/* banner */
+
+.banner img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* typing */
+
+#typing{
+font-size:24px;
+min-height:60px;
+}
+
+/* cake */
+
+.cake{
+font-size:60px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+
+/* button */
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* family photo */
+
+.photo{
+display:none;
+margin-top:15px;
+}
+
+.photo img{
+width:220px;
+border-radius:12px;
+}
+
+/* gallery */
+
+.gallery{
+display:flex;
+gap:10px;
+margin-top:15px;
+overflow-x:auto;
+padding:10px;
+}
+
+.gallery img{
+height:140px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+cursor:pointer;
+}
+
+/* balloons */
+
+.balloon{
+position:absolute;
+bottom:-100px;
+font-size:30px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(0)}
+to{transform:translateY(-120vh)}
+}
+
+/* confetti */
+
+.confetti{
+position:absolute;
+width:8px;
+height:8px;
+top:0;
+animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh) rotate(720deg);
+opacity:0;
+}
+}
+
+/* fireworks */
+
+.firework{
+position:fixed;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+animation:explode 1.2s ease-out forwards;
+}
+
+@keyframes explode{
+from{
+transform:scale(1);
+opacity:1;
+}
+to{
+transform:scale(25);
+opacity:0;
+}
+}
+
+/* image popup */
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.popup img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="start" onclick="startSurprise()">
+🎉 Tap to start the Birthday Surprise 🎉
+</div>
+
+<div class="card" id="card">
+
+<div class="banner">
+<img src="images/banner2.jpeg">
+</div>
+
+<h1 id="typing"></h1>
+
+<div class="cake">🎂</div>
+
+<p>You are the biggest support of our family ❤️</p>
+
+<button onclick="openGift()">🎁 Open Your Gift</button>
+
+<div class="photo" id="photo">
+<h3>Our Family ❤️</h3>
+<img src="images/family.jpeg">
+</div>
+
+<h3>Beautiful Memories 📸</h3>
+
+<div class="gallery">
+
+<img src="images/photo1.jpeg" onclick="openPopup(this)">
+<img src="images/photo2.jpeg" onclick="openPopup(this)">
+<img src="images/photo3.jpeg" onclick="openPopup(this)">
+<img src="images/Photo5.jpeg" onclick="openPopup(this)">
+<img src="images/images6.jpeg" onclick="openPopup(this)">
+<img src="images/images7.jpeg" onclick="openPopup(this)"> 
+<img src="images/images8.jpeg" onclick="openPopup(this)">
+<img src="images/images10.jpeg" onclick="openPopup(this)"> 
+<img src="images/images11.jpeg" onclick="openPopup(this)">
+<!-- <img src="photo10.jpg" onclick="openPopup(this)"> -->
+
+</div>
+
+</div>
+
+<!-- balloons -->
+
+<div class="balloon" style="left:10%">🎈</div>
+<div class="balloon" style="left:25%;animation-delay:2s">🎈</div>
+<div class="balloon" style="left:40%;animation-delay:4s">🎈</div>
+<div class="balloon" style="left:55%;animation-delay:1s">🎈</div>
+<div class="balloon" style="left:70%;animation-delay:3s">🎈</div>
+<div class="balloon" style="left:85%;animation-delay:5s">🎈</div>
+
+<audio id="music" loop>
+<source src="music.mp3.mpeg" type="audio/mpeg">
+</audio>
+
+<!-- popup -->
+
+<div id="popup" class="popup" onclick="closePopup()">
+<img id="popup-img">
+</div>
+
+<script>
+
+function startSurprise(){
+
+document.querySelector(".start").style.display="none";
+document.getElementById("card").style.display="block";
+
+document.getElementById("music").play();
+
+typeWriter();
+
+}
+
+let text="🎉 Ritesh wishes you a very Happy Birthday Papa ❤️";
+let i=0;
+
+function typeWriter(){
+
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typeWriter,70);
+}
+
+}
+
+function openGift(){
+
+document.getElementById("photo").style.display="block";
+
+confetti();
+fireworks();
+
+}
+
+/* confetti */
+
+function confetti(){
+
+for(let i=0;i<60;i++){
+
+let c=document.createElement("div");
+c.className="confetti";
+
+c.style.left=Math.random()*100+"%";
+c.style.backgroundColor="hsl("+Math.random()*360+",100%,50%)";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{c.remove()},3000);
+
+}
+
+}
+
+/* fireworks */
+
+function fireworks(){
+
+for(let i=0;i<15;i++){
+
+let f=document.createElement("div");
+f.className="firework";
+
+f.style.left=Math.random()*100+"%";
+f.style.top=Math.random()*80+"%";
+
+document.body.appendChild(f);
+
+setTimeout(()=>{f.remove()},1200);
+
+}
+
+}
+
+/* popup */
+
+function openPopup(img){
+
+document.getElementById("popup").style.display="flex";
+document.getElementById("popup-img").src=img.src;
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>
